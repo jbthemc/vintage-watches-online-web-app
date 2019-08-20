@@ -3,7 +3,7 @@ const API_URL = "http://localhost:8090";
 window.Cart = {
 
     getCart: function () {
-        let customerId = 12;
+        let customerId = 44;
 
         $.ajax({
             url: API_URL + "/cart/" + customerId,
