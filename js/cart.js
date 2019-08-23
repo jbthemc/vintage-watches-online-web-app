@@ -3,7 +3,7 @@ const API_URL = "http://localhost:8090";
 window.Cart = {
 
     getCart: function () {
-        let customerId = 44;
+        let customerId = 7;
 
         $.ajax({
             url: API_URL + "/cart/" + customerId,
@@ -21,7 +21,7 @@ window.Cart = {
                                             </td>
 
                                             <td class="product-thumbnail">
-                                                <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src=${product.imagePath}></a>
+                                                <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="img/product-thumb-2.jpg"></a>
                                             </td>
 
                                             <td class="product-name">
