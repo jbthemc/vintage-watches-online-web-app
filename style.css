@@ -253,7 +253,8 @@ z-index: 999;}
 	margin-top: 27px;
 }
 .block-slider .caption-group .primary{
-	color: #1bd172;
+	color: #af4543;
+	text-shadow: 1px 1px 5px black;
 }
 .block-slider .caption-group .caption{
 
