@@ -2,21 +2,38 @@ const API_URL = "http://localhost:8090";
 
 window.Shop = {
 
-    addProductToCart: function (productId) {
-        let body = {
-            customerId: 7,
-            productId: productId
-        };
+    // addProductToCart: function (productId) {
+    //     let body = {
+    //         customerId: 7,
+    //         productId: productId
+    //     };
+    //
+    //     $.ajax({
+    //         url: API_URL + "/cart",
+    //         method: "PUT",
+    //         // MIME type
+    //         contentType: "application/json",
+    //         data: JSON.stringify(body)
+    //     }).done(function () {
+    //         window.location.replace("cart.html");
+    //     });
+    // },
 
-        $.ajax({
-            url: API_URL + "/cart",
-            method: "PUT",
-            // MIME type
-            contentType: "application/json",
-            data: JSON.stringify(body)
-        }).done(function () {
-            window.location.replace("cart.html");
-        });
+    addProductToShoppingCart: function(productToBeAddedToChartId){
+            //defining the customer (hardcoded) and product
+            let body ={
+                customerId: 5,
+                productId: productToBeAddedToChartId
+            };
+
+            $.ajax({
+                url: API_URL +"/shopping_cart",
+                method: "PUT",
+                contentType: "application/json",
+                data: JSON.stringify(body),
+            }).done(function(){
+                console.log('Product has been successfully added to chart.');
+            })
     },
 
     getProducts: function () {
@@ -56,14 +73,24 @@ window.Shop = {
         $('#products-container').html(productsHtml);
     },
 
+    // bindEvents: function () {
+    //     $('#products-container').delegate(
+    //         '.add_to_cart_button', 'click', function (event) {
+    //             event.preventDefault();
+    //
+    //             let productId = $(this).data('product_id');
+    //             Shop.addProductToCart(productId);
+    //     });
+    // }
+
     bindEvents: function () {
         $('#products-container').delegate(
             '.add_to_cart_button', 'click', function (event) {
                 event.preventDefault();
-
                 let productId = $(this).data('product_id');
-                Shop.addProductToCart(productId);
-        });
+                Shop.addProductToShoppingCart(productId);
+            }
+        )
     }
 };
 
