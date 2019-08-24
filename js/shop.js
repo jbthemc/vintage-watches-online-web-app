@@ -32,7 +32,8 @@ window.Shop = {
                 contentType: "application/json",
                 data: JSON.stringify(body),
             }).done(function(){
-                console.log('Product has been successfully added to chart.');
+                //console.log('Product has been successfully added to chart.');
+                window.location.replace("cart.html");
             })
     },
 
