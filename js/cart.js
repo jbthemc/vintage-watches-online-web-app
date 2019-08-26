@@ -3,10 +3,10 @@ const API_URL = "http://localhost:8090";
 window.Cart = {
 
     getCart: function () {
-        let customerId = 44;
-
+        //hardcode customer Id
+        let customerId = 5;
         $.ajax({
-            url: API_URL + "/cart/" + customerId,
+            url: API_URL + "/shopping_cart/" + customerId,
             method: "GET"
         }).done(function (response) {
             console.log(response);
@@ -21,7 +21,7 @@ window.Cart = {
                                             </td>
 
                                             <td class="product-thumbnail">
-                                                <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src=${product.imagePath}></a>
+                                                <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="${product.imagePath}"></a>
                                             </td>
 
                                             <td class="product-name">
@@ -54,7 +54,6 @@ window.Cart = {
         // cssSelector
         $('.shop_table.cart tbody').html(productsHtml);
     },
-
 };
 
 Cart.getCart();
