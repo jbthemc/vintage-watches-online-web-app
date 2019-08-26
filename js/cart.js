@@ -4,13 +4,14 @@ window.Cart = {
 
     getCart: function () {
         //hardcode customer Id
-        let customerId = 5;
+        let customerId = 1;
         $.ajax({
             url: API_URL + "/shopping_cart/" + customerId,
             method: "GET"
         }).done(function (response) {
             console.log(response);
-            Cart.displayProducts(response.products)
+            Cart.displayProducts(response.products);
+            Cart.displayProducts2(response.products);
         });
     },
 
@@ -29,7 +30,7 @@ window.Cart = {
                                             </td>
 
                                             <td class="product-price">
-                                                <span class="amount">£${product.price}</span> 
+                                                <span class="amount">$${product.price}</span> 
                                             </td>
 
                                             <td class="product-quantity">
@@ -41,7 +42,7 @@ window.Cart = {
                                             </td>
 
                                             <td class="product-subtotal">
-                                                <span class="amount">£${product.price}</span> 
+                                                <span class="amount">$${product.price}</span> 
                                             </td>
                                         </tr>`
     },
@@ -54,6 +55,26 @@ window.Cart = {
         // cssSelector
         $('.shop_table.cart tbody').html(productsHtml);
     },
-};
 
+
+    getProductHtml2: function (product) {
+        return `<div class="thubmnail-recent">
+                    <img src="${product.imagePath}" class="recent-thumb" alt="">
+                    <h2><a href="single-product.html">${product.name}</a></h2>
+                    <div class="product-sidebar-price">
+                        <ins>$${product.price}</ins>
+                    </div>                             
+                </div>`
+    },
+
+    displayProducts2: function (products) {
+        let productsHtml2 = "";
+
+        products.forEach(product => productsHtml2 += Cart.getProductHtml2(product));
+
+        // cssSelector
+        $('#recent').html(productsHtml2);
+    },
+
+};
 Cart.getCart();
