@@ -5,7 +5,7 @@ window.Shop = {
     addProductToShoppingCart: function(productToBeAddedToChartId){
             //defining the customer (hardcoded) and product
             let body ={
-                customerId: 5,
+                customerId: 1,
                 productId: productToBeAddedToChartId
             };
 
