@@ -30,7 +30,7 @@ window.Cart = {
                                             </td>
 
                                             <td class="product-price">
-                                                <span class="amount">$${product.price}</span> 
+                                                <span class="amount">€${product.price}</span> 
                                             </td>
 
                                             <td class="product-quantity">
@@ -42,7 +42,7 @@ window.Cart = {
                                             </td>
 
                                             <td class="product-subtotal">
-                                                <span class="amount">$${product.price}</span> 
+                                                <span class="amount">€${product.price}</span> 
                                             </td>
                                         </tr>`
     },
@@ -62,7 +62,7 @@ window.Cart = {
                     <img src="${product.imagePath}" class="recent-thumb" alt="">
                     <h2><a href="single-product.html">${product.name}</a></h2>
                     <div class="product-sidebar-price">
-                        <ins>$${product.price}</ins>
+                        <ins>€${product.price}</ins>
                     </div>                             
                 </div>`
     },
