@@ -57,22 +57,22 @@ window.Cart = {
     },
 
     getProductHtml2: function (product) {
-    return `<div class="thubmnail-recent">
+        return `<div class="thubmnail-recent">
                     <img src="${product.imagePath}" class="recent-thumb" alt="">
                     <h2><a href="single-product.html">${product.name}</a></h2>
                     <div class="product-sidebar-price">
                         <ins>€${product.price}</ins>
-                    </div>                             
+                    </div>
                 </div>`
     },
 
     displayProducts2: function (products) {
-    let productsHtml2 = "";
+        let productsHtml2 = "";
 
-    products.forEach(product => productsHtml2 += Cart.getProductHtml2(product));
+        products.forEach(product => productsHtml2 += Cart.getProductHtml2(product));
 
-    // cssSelector
-    $('#recent').html(productsHtml2);
+        // cssSelector
+        $('#recent').html(productsHtml2);
     },
 };
 
