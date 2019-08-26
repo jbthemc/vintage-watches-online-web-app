@@ -40,7 +40,7 @@ window.Shop = {
                         <h2 style="width: 300px; height: 15px;"><a href="">${product.name}</a></h2>
 
                         <h2 style="width: 300px; height: 15px;"><a href="">Rating: ${product.productRate}</a></h2>
-                        <p href=""style="height: 75px; width: 250px;">Descripion: ${product.productDescription}</p>
+                        <p href=""style="height: 75px; width: 250px;">Description: ${product.productDescription}</p>
                         <div class="product-carousel-price">
                             <ins>Price: € ${product.price}</ins>
                         </div> 

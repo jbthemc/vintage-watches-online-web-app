@@ -4,7 +4,7 @@ window.Index = {
 
     addProductToCart: function (productId) {
         let body = {
-            customerId: 44,
+            customerId: 5,
             productId: productId
         };
 
